@@ -21,10 +21,6 @@ server.get('/check_note', function(req,res){
   console.log("Sending note contents");
   res.status(200).send(zapiska);
 })
-
-
-var port = 10001;
-
-server.listen(port, function(){
-	console.log('server listening on port '+ port);
+server.listen(process.env.PORT || 5000, function(){
+ console.log('server started');
 });
